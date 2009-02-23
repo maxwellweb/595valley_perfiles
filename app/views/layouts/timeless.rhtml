@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<%= stylesheet_link_tag 'main' %>
+	<title>595Valley &raquo; <% if @page_title %>Integrantes &raquo <%= @page_title %><% else %>Integrantes<% end %></title>
+</head>
+<body>
+	<div class="header">
+		<div class="logo">
+			<h1><%= link_to '595<span class="logo-thin">Valley</span>', { :controller => 'home', :action => 'index' }, { :title => 'Integrantes del 595Valley' } %> </h1>
+		</div>
+		<div class="navigation">
+			<ul>
+				<li><%= link_to 'Integrantes', { :controller => 'home', :action => 'index' }, { :title => 'Integrantes del 595Valley' } %></li>
+				<li><%= link_to 'Blog', 'http://595valley.com/', { :title => 'Blog del 595Valley' } %></li>
+			</ul>
+		</div>
+	</div>
+	<div class="main">
+		<div class="left-column">
+			<% if flash[:notice] %><div id="fnotice" class="site-flash"><%= flash[:notice] %></div><% end %><% if flash[:error] %><div id="ferror" class="site-flash"><%= flash[:error] %></div><% end %>
+			<%= yield :layout %>
+		</div>
+		<div class="right-column">
+			<% if logged_in? %>
+			<p>Conectado como <b><%= current_user.login %></b></p>
+			<p>avatar</p>
+			<p>- <%= link_to '<b>Editar mi perfil</b>', { :controller => 'profile', :action => 'edit' }, { :title => 'Editar mi perfil' }%></p>
+			<p>- <%= link_to '<b>Salir</b>', { :controller => 'sessions', :action => 'destroy' }, { :title => 'Cerrar sesi&oacute;n' } %></p>
+			<% else %>
+			<h3>&iquest;Qu&eacute; es el 595Valley?</h3>
+			<p>Este es el principio, el punto de union de mucho por venir.</p>
+			<p>Hoy Paraguay</p>
+			<p>El resto del mundo? despues de cenar</p>
+			<% end %>
+		</div>
+	</div>
+	<div class="seperater"></div>
+	<div class="footer">
+		<div class="footer-inner">
+			<div class="footer-left">
+				<ul>
+					<li>595Valley. </li>
+					<li> 2008</li>
+				</ul>
+				<ul>
+					<li class="small"><a href="http://www.firebubble.co.uk">web design</a> </li>
+					<li class="small">by sjl <a href="http://www.sjlwebdesign.co.uk">web design </a></li>
+				</ul>
+			</div>
+			<div class="footer-right">
+				<ul>
+					<li><%= link_to 'integrantes', { :controller => 'home', :action => 'index' }, { :title => 'Integrantes del 595Valley' } %> | </li>
+					<li><%= link_to 'blog', 'http://595valley.com/', { :title => 'Blog del 595Valley' } %></li>
+				</ul>
+			</div>
+			</div>
+		</div>
+</html>

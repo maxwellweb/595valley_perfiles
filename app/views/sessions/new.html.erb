@@ -1,0 +1,10 @@
+
+			<h1>Inicio de sesi&oacute;n</h1>
+			<% form_tag session_path do -%>
+				<p><%= label_tag 'login', 'Nombre de usuario / Direcci&oacute;n de correo electr&oacute;nico' %><br />
+				<%= text_field_tag 'login', @login %></p>
+				<p><%= label_tag 'password', 'Contrase&ntilde;a' %><br/>
+				<%= password_field_tag 'password', nil %></p>
+				<p><%= submit_tag 'Entrar', :class => 'bsubmit' %></p>
+			<% end -%>
+			<script type="text/javascript">if (document.getElementById('login').value.length == 0) { document.getElementById('login').focus(); } else { document.getElementById('password').focus(); }</script>

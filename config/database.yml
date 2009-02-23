@@ -1,0 +1,12 @@
+development:
+  adapter: mysql
+  database: 595valley
+  username: root
+  password: Hefesto1
+  timeout: 5000
+
+test:
+  development
+
+production:
+  development
