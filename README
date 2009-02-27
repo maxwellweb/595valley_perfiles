@@ -1,1 +1,5 @@
 == Perfiles de 595Valley
+* Las sesiones se almacenan en la base de datos, antes de correr
+la aplicacion hay que hacer un migrate:
+
+  $ rake db:migrate
