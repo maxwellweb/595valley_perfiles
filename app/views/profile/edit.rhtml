@@ -1,2 +1,29 @@
 
+<%= @profile.class %>
 			<h1>Editar mi perfil</h1>
+			<% form_for :profile do |f| %>
+				<p>
+					<label for="profile_first_name">Nombre</label><br />
+					<%= f.text_field 'first_name' %>
+				</p>
+				<p>
+					<label for="profile_last_name">Apellido</label><br />
+					<%= f.text_field 'last_name' %>
+				</p>
+				<p>
+					<label for="profile_corporation">Empresa / Corporaci&oacute;n</label><br />
+					<%= f.text_field 'corporation' %>
+				</p>
+				<p>
+					<label for="profile_occupation">Ocupaci&oacute;n</label><br />
+					<%= f.text_field 'occupation' %>
+				</p>
+				<p>
+					<label for="profile_weblog_url">URL de tu blog o sitio personal</label><br />
+					<%= f.text_field 'weblog_url' %>
+				</p>
+				<p>
+					<%= submit_tag 'Actualizar &raquo;', :class => 'bsubmit' %>
+				</p>
+			<% end %>
+			<script type="text/javascript">document.getElementById('profile_first_name').focus();</script>
